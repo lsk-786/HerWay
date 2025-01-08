@@ -587,3 +587,18 @@ function checkCommentOwnership(req,res,next) {
 app.listen(PORT,() => {
     console.log("Server has started successfully!!");
 })
+
+//childcare
+app.get('/api/childcare', (req, res) => {
+    const location = req.query.location.toLowerCase();
+    const childcareServices = [
+        { name: "Little Angels Daycare", address: "123 Elm Street, Springfield", city: "Springfield" },
+        { name: "Happy Kids Center", address: "456 Maple Avenue, Springfield", city: "Springfield" },
+        { name: "Bright Futures Academy", address: "789 Oak Road, Shelbyville", city: "Shelbyville" },
+    ];
+    const filteredServices = childcareServices.filter(service =>
+        service.city.toLowerCase().includes(location)
+    );
+    res.json({ services: filteredServices });
+});
+

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Childcare Support - HerEquity</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<style>
+    /* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Header Styling */
+header {
+    background-color: #6a1b9a;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Main Section */
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Section */
+.location-form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.location-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #6a1b9a;
+    text-transform: uppercase;
+}
+
+.location-form form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.location-form input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.location-form input[type="text"]:focus {
+    border-color: #6a1b9a;
+    outline: none;
+}
+
+.location-form button {
+    background-color: #6a1b9a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.location-form button:hover {
+    background-color: #4a0072;
+}
+
+/* Results Section */
+#childcareResults {
+    margin-top: 30px;
+    text-align: left;
+}
+
+#childcareResults h2 {
+    font-size: 1.5rem;
+    color: #6a1b9a;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+#resultsList {
+    list-style: none;
+    padding: 0;
+}
+
+#resultsList li {
+    background: #e1bee7;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #d81b60;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer span {
+    font-weight: bold;
+}
+
+
+</style>
+<body>
+    <header>
+        <h1>Find Childcare Support Near You</h1>
+    </header>
+    <main>
+        <section class="location-form">
+            <h2>Enter Your Location</h2>
+            <form id="locationForm">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="Enter your city or ZIP code" required>
+                <button type="submit">Find Childcare</button>
+            </form>
+        </section>
+        <section id="childcareResults">
+            <h2>Nearby Childcare Services</h2>
+            <ul id="resultsList"></ul>
+        </section>
+    </main>
+
+    
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <h1><a id="back-to-top" href="#go-to-top">HerWay</a></h1>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    
+                    <p>&copy; 2025 HerEquity. All Rights Reserved.</p>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="Backend/models/childcare.js"></script>
+</html>
