@@ -62,7 +62,7 @@ body {
 
 /* Navigation Bar */
 nav {
-    background: var(--primary);
+    background: rgb(74, 74, 115) ;
     color: var(--text-variant);
     z-index: 1;
 }
@@ -127,22 +127,33 @@ a.nav-link.px-4 {
 #hero-section {
     position: relative;
     bottom: 0;
-    height: 90vh;
-    background-color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    opacity: 0.4;
+    background-color: #030303;
+    text-align: center;
+    background: url('assets/images/Hero Image.png') no-repeat center center;
+    background-size: cover; /* Ensure the image covers the entire section */
+
+
 }
+
 
 .hero-intro {
     position: relative;
-    z-index: 5;
+    z-index: 1;
 }
 
 #hero-section h1 {
-    color: var(--highlight);
+    color: #000000;
     letter-spacing: 1px;
     font-weight: 800;
     font-size: 48px;
     line-height: 106%;
     padding-top: 5%;
+    z-index: 1;
 }
 
 #hero-section span {
@@ -155,6 +166,11 @@ a.nav-link.px-4 {
     color: #757575; /* grey */
     font-size: 1.2em;
 }
+
+.backimg {
+    display: none;
+   
+  }
 
 
 .cta {
