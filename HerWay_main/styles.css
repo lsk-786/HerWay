@@ -2,34 +2,29 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: "europa", sans-serif;
+    font-family: "Roboto", sans-serif;
     box-sizing: border-box;
     outline: none;
 }
 
-
-/* #e6198e */
-
-
 /* Color Codes & Other Variables */
-
 :root {
-    --primary: #ffb32c;
-    --primary-variant: #F17C1C;
-    --text: #000;
-    --text-variant: #fff;
-    --highlight: #8EE619;
+    --primary: #4CAF50; /* green */
+    --primary-variant: #388E3C;
+    --text: #212121; /* dark grey */
+    --text-variant: #ffffff; /* white */
+    --highlight: #473420; /* orange */
 }
 
-
 /* overall adjustments */
-
 html {
     scroll-behavior: smooth;
 }
 
 body {
     overflow-x: hidden;
+    background-color: #FAFAFA;
+    color: var(--text);
 }
 
 .container-fluid {
@@ -50,62 +45,62 @@ body {
     user-select: none;
 }
 
-
 /* scroll bar */
-
 ::-webkit-scrollbar {
     width: 6px;
-    background-color: #F5F5F5;
+    background-color: #E0E0E0;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #000000;
+    background-color: var(--primary);
 }
 
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #F5F5F5;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+    background-color: #E0E0E0;
 }
 
-
 /* Navigation Bar */
-
 nav {
-    background: var(--text-variant);
-    color: var(--primary-variant);
+    background: var(--primary);
+    color: var(--text-variant);
     z-index: 1;
 }
 
 .navbar {
-    /* padding: 0 0 4.5rem;  */
     padding-left: 10%;
     padding-right: 10%;
 }
 
 .navbar-brand {
     font-size: 2rem;
-    font-weight: bolder;
-    color: #e6198e;
+    font-weight: bold;
+    color: var(--text-variant);
 }
 
 .navlink-border:hover {
-    border-bottom: 2px solid var(--primary-variant);
+    border-bottom: 2px solid var(--highlight);
 }
 
 .nav-link {
-    font-size: 1.5 rem;
+    font-size: 1.5rem;
     font-weight: normal;
-    color: var(--primary-variant);
+    color: var(--text-variant);
 }
 
 .navbar-toggler i {
-    color: #e6198e;
+    color: var(--text-variant);
+}
+.nav-link:hover{
+    color: white;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #bdbdbd, 0 0 40px #bebebe, 0 0 50px #f6f6f6, 0 0 60px #c4c4c4, 0 0 70px #d7d7d7;
+    t
 }
 
 .navbar-brand:hover,
-.nav-link:hover,
+
 .navbar-toggler i:hover {
-    color: #e6198e;
+    color: var(--highlight);
 }
 
 a.nav-link.px-4 {
@@ -114,7 +109,7 @@ a.nav-link.px-4 {
 
 .login-btn {
     color: var(--text-variant);
-    background-image: linear-gradient(134deg, #e6198e, #e6198e, var(--primary-variant));
+    background-image: linear-gradient(134deg, var(--primary-variant), var(--highlight));
     border-radius: 30px;
     padding: 10px 45px;
     margin-top: -10px;
@@ -122,20 +117,18 @@ a.nav-link.px-4 {
 
 .login-btn:hover {
     color: var(--text-variant);
-    background-image: linear-gradient(134deg, var(--primary-variant), #e6198e, #e6198e);
+    background-image: linear-gradient(134deg, var(--highlight), var(--primary-variant));
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     border-radius: 30px;
     padding: 10px 45px;
 }
 
-
 /* hero section */
-
 #hero-section {
     position: relative;
     bottom: 0;
     height: 90vh;
-    background-color: #f7f7f7;
+    background-color: #F5F5F5;
 }
 
 .hero-intro {
@@ -144,8 +137,8 @@ a.nav-link.px-4 {
 }
 
 #hero-section h1 {
-    color: #EF6700;
-    letter-spacing: 1pxs;
+    color: var(--highlight);
+    letter-spacing: 1px;
     font-weight: 800;
     font-size: 48px;
     line-height: 106%;
@@ -153,30 +146,29 @@ a.nav-link.px-4 {
 }
 
 #hero-section span {
-    color: #e6198e;
+    color: var(--primary-variant);
     font-size: 1.4em;
 }
 
 #hero-section p {
     padding-top: 5%;
-    color: grey;
+    color: #757575; /* grey */
     font-size: 1.2em;
 }
+
 
 .cta {
     margin-top: 2vh;
     padding: 10px 45px;
     color: #FFF;
-    background-image: linear-gradient(to top, #E6198E, #EB47A5);
+    background-image: linear-gradient(to top, #4CAF50, #66BB6A); /* green gradient */
     border-radius: 30px;
-    /* transition: all ease-in-out 0.25s; */
 }
 
 .cta:hover {
     color: #FFF;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
-    background-image: linear-gradient(to top, #EB47A5, #E6198E);
-    /* padding: 10px 55px; */
+    background-image: linear-gradient(to top, #66BB6A, #4CAF50); /* reversed green gradient */
 }
 
 .hero-image {
@@ -187,12 +179,6 @@ a.nav-link.px-4 {
     width: 80% !important;
 }
 
-.hero-wave {
-    background-color: #f7f7f7;
-    margin-top: -200px;
-    position: absolute;
-    bottom: 0;
-}
 
 @media only screen and (max-width: 992px) {
     .hero-image {
@@ -205,12 +191,13 @@ a.nav-link.px-4 {
         padding-right: 10%;
     }
     #hero-section h1 {
-        font-size: normal;
-        color: #fa7f34;
+        font-size: 1.8em;
+        color: #FF9800; /* orange */
     }
     #hero-section p {
         padding-top: 50px;
-        font-size: normal;
+        font-size: 1.1em;
+        color: #616161; /* grey */
     }
 }
 
@@ -230,17 +217,16 @@ a.nav-link.px-4 {
         bottom: 0px;
         left: 0px;
         background-color: rgba(0, 0, 0, 0.45);
-        /* margin-bottom: -20%; */
     }
     #hero-section h1 {
         margin-top: 5%;
         font-size: 2.5em;
-        color: orange;
+        color: #FF5722; /* deep orange */
     }
     #hero-section p {
-        color: seashell;
+        color: #FFF8E1; /* light yellow */
         padding-top: 20px;
-        font-size: normal;
+        font-size: 1em;
     }
     .cta {
         margin-top: 2%;
@@ -251,7 +237,6 @@ a.nav-link.px-4 {
     #hero-section {
         padding-top: 5vh;
     }
-    ;
 }
 
 @media only screen and (max-width: 768px) {
@@ -260,11 +245,10 @@ a.nav-link.px-4 {
     }
 }
 
-
 /* description section */
 
 #description-section {
-    background-color: #F5F5F9;
+    background-color: #E3F2FD; /* light blue */
     text-align: center;
     padding-bottom: 50px;
 }
@@ -272,14 +256,14 @@ a.nav-link.px-4 {
 #description-section h1 {
     margin-top: 100px;
     padding-bottom: 16px;
-    color: #35353F;
+    color: #1E88E5; /* blue */
     font-size: 32px;
     font-weight: bold;
 }
 
 #description-section p {
     padding: 0 15%;
-    color: #35353F;
+    color: #37474F; /* dark grey */
     font-size: 1.125rem;
     line-height: 1.75rem;
     opacity: 0.9;
@@ -293,34 +277,35 @@ a.nav-link.px-4 {
 }
 
 #description-section .fa-calendar-check {
-    color: #EF9425;
+    color: #4CAF50; /* green */
 }
 
 #description-section .fa-shopping-cart {
-    color: #47BDA1;
+    color: #FF5722; /* deep orange */
 }
 
 #description-section .fa-search {
-    color: #862783;
+    color: #673AB7; /* deep purple */
 }
 
 .description-cta {
-    color: var(--text-variant);
-    background-color: #e6198e;
+    color: #FFFFFF; /* white */
+    background-color: #1E88E5; /* blue */
     border-radius: 50px;
     padding: 10px 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .description-cta:hover {
-    color: #e6198e;
+    color: #1E88E5; /* blue */
     background-color: transparent;
+    border: 2px solid #1E88E5;
 }
-
 
 /* build flex section */
 
 #build-flex {
-    background-color: #F5F5F9;
+    background-color: #E3F2FD; /* light blue */
     text-align: center;
     padding-bottom: 100px;
 }
@@ -328,45 +313,49 @@ a.nav-link.px-4 {
 #build-flex h1 {
     margin-top: 50px;
     font-weight: 700;
+    color: #1565C0; /* dark blue */
 }
 
 #build-flex a {
-    color: #EF6700;
+    color: #FF9800; /* orange */
+    text-decoration: underline;
 }
 
 #build-flex a:hover {
     text-decoration: none;
+    color: #E65100; /* dark orange */
 }
 
 #build-flex span {
-    color: #e6198e;
+    color: #D81B60; /* pink */
 }
-
 
 /* footer */
 
 footer {
-    background-color: #e6198e;
+    background-color: #1E88E5; /* blue */
+    color: #FFFFFF; /* white */
 }
 
 footer h1:hover {
-    color: var(--text-variant);
+    color: #FFD740; /* yellow */
 }
 
 #back-to-top:hover {
-    color: var(--text-variant);
+    color: #FFD740; /* yellow */
 }
 
 footer p {
-    color: #F5F5F5;
+    color: #CFD8DC; /* light grey */
 }
 
 footer a {
-    color: #F5F5F5;
+    color: #BBDEFB; /* light blue */
+    text-decoration: underline;
 }
 
 footer a:hover {
-    color: orange;
+    color: #FF9800; /* orange */
     text-decoration: none;
 }
 
@@ -376,206 +365,173 @@ footer a:hover {
     }
 }
 
-
 /* login */
 
 #login {
     height: 100vh;
     overflow: hidden;
+    background-color: #E3F2FD; /* light blue */
 }
 
 #login-form {
-    padding-top: 5%;
-    padding-left: 8%;
-    padding-right: 8%;
-    padding-bottom: 8%;
+    padding: 5% 8% 8%;
+    background-color: #FFFFFF; /* white */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #login-form h1 {
-    color: #381e56;
+    color: #1565C0; /* dark blue */
+    font-size: 2rem;
 }
 
 #login-form h1 a:hover {
-    text-decoration: none;
+    text-decoration: underline;
+    color: #0D47A1; /* darker blue */
 }
 
 #login-form h3 {
     font-weight: bold;
     padding-top: 50px;
+    color: #37474F; /* dark grey */
 }
 
 #login-form p {
-    color: grey;
+    color: #607D8B; /* muted grey */
 }
 
 .submit-btn {
-    color: #F5F5F5;
+    color: #FFFFFF; /* white */
     padding: 10px 45px;
-    background-color: rgba(56, 30, 86, 0.7);
+    background-color: #1E88E5; /* blue */
+    border-radius: 25px;
     margin-top: 30px;
+    transition: all 0.3s ease-in-out;
 }
 
 .submit-btn:hover {
     padding: 10px 55px;
-    color: var(--text-variant);
-    background-color: rgba(56, 30, 86, 0.9);
+    background-color: #0D47A1; /* darker blue */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 #login-form .extra {
     text-align: center;
     padding-top: 20px;
+    color: #607D8B; /* muted grey */
 }
 
 #login-form a {
-    color: #381e56;
+    color: #1E88E5; /* blue */
+    text-decoration: underline;
 }
 
 #login-img {
     position: relative;
     bottom: 0;
-    background-color: #381e56;
+    background-color: #1E88E5; /* blue */
     padding: 10% 8%;
+    border-radius: 10px;
 }
-
 
 /* signup */
 
 #signup-form {
-    padding-top: 1%;
-    padding-left: 8%;
-    padding-right: 8%;
-    padding-bottom: 8%;
+    padding: 1% 8% 8%;
+    background-color: #F3F4F6; /* light grey */
+    border-radius: 10px;
 }
 
 #signup-form h1 {
-    color: #381e56;
+    color: #1565C0; /* dark blue */
 }
 
 #signup-form h1 a:hover {
-    text-decoration: none;
+    text-decoration: underline;
+    color: #0D47A1; /* darker blue */
 }
 
 #signup-form h3 {
     font-weight: bold;
     padding-top: 10px;
+    color: #37474F; /* dark grey */
 }
 
 #signup-form p {
-    color: grey;
+    color: #607D8B; /* muted grey */
 }
 
 #signup-form .extra {
     text-align: center;
     padding-top: 20px;
+    color: #607D8B; /* muted grey */
 }
 
 #signup-form a {
-    color: #381e56;
+    color: #1E88E5; /* blue */
+    text-decoration: underline;
 }
-
 
 /* resources page */
 
 #resources {
     height: 90vh;
+    background-color: #E1F5FE; /* very light blue */
 }
 
-
 #resources h1 {
-    color: #EF6700;
-    letter-spacing: 1pxs;
+    color: #1565C0; /* dark blue */
     font-weight: 800;
     font-size: 40px;
-    line-height: 106%;
     padding-top: 5%;
 }
 
 #resources p {
     padding-top: 5%;
-    color: grey;
+    color: #607D8B; /* muted grey */
     font-size: 1.2em;
 }
 
 #resources span {
-    color: #e6198e;
+    color: #D81B60; /* pink */
     font-size: 1.4em;
-}
-
-@media only screen and (max-width: 768px) {
-    #resources {
-        padding-top: 5%;
-    }
-}
-
-@media only screen and (max-width: 992px) {
-    #resources {
-        padding-right: 5%;
-    }
-}
-
-@media only screen and (max-width: 990px) {
-
-    #resources {
-        height: 90vh;
-        background-image: url(assets/resources-hero.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    #resources h1 {
-        margin-top: 5%;
-        font-size: 2.5em;
-        color: orange;
-    }
-
-    #resources::before {
-        content: "";
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        background-color: rgba(0, 0, 0, 0.45);
-    }
-
-    #resources p {
-        color: seashell;
-        padding-top: 20px;
-        font-size: 1.2em;
-    }
-
 }
 
 .resources-btn {
     margin-top: 2%;
     padding: 10px 45px;
-    color: #FFF;
-    background-image: linear-gradient(to top, #E6198E, #EB47A5);
+    color: #FFFFFF; /* white */
+    background-image: linear-gradient(to top, #1E88E5, #42A5F5);
     border-radius: 30px;
+    transition: background-image 0.3s ease;
 }
 
 .resources-btn:hover {
-    color: #FFF;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
-    background-image: linear-gradient(to top, #EB47A5, #E6198E);
+    background-image: linear-gradient(to top, #42A5F5, #1E88E5);
 }
 
-
 /* scholarship & jobs section */
-
 
 #scholarships p {
     padding-right: 10%;
     font-size: 28px;
     font-weight: 600;
+    color: #37474F; /* dark grey */
 }
 
 .contribution-btn {
-    color: var(--text);
-    border: 2px solid var(--text);
+    color: #FFFFFF; /* white */
+    border: 2px solid #1E88E5; /* blue */
     padding: 16px 32px;
     border-radius: 10px;
+    background-color: #1E88E5; /* blue */
+    transition: all 0.3s ease;
+}
+
+.contribution-btn:hover {
+    background-color: #42A5F5; /* lighter blue */
+    border-color: #42A5F5;
 }
 
 #scholarships h1,
@@ -583,10 +539,9 @@ footer a:hover {
     letter-spacing: 2px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #e6198e;
+    color: #1E88E5; /* blue */
     font-size: 2.5em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin: 1em 0;
 }
 
 #scholarships ul,
@@ -597,38 +552,29 @@ footer a:hover {
 
 #scholarships li,
 #jobs li {
-    background-color: #F5F5F9;
+    background-color: #F3F4F6; /* light grey */
     padding: 30px;
     margin-bottom: 5px;
-    line-height: 1.75rem;
     font-size: 1.2rem;
 }
 
-#scholarships li a,
-#jobs li a {
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
 #scholarships li:hover,
-#jobs li:hover{
-    background-color: #fdc8ff;
+#jobs li:hover {
+    background-color: #BBDEFB; /* very light blue */
 }
 
 #scholarships a,
 #jobs a {
-    color: var(--text);
+    color: #1E88E5; /* blue */
+    text-decoration: underline;
 }
 
 #scholarships a:hover,
 #jobs a:hover {
-    color: #e6198e;
+    color: #D81B60; /* pink */
     text-decoration: none;
 }
 
 #jobs {
     padding-bottom: 50px;
 }
-
