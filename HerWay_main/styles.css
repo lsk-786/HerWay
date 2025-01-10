@@ -32,9 +32,9 @@ body {
 }
 
 .container-fluid-hero {
-    padding-top: 3%;
-    padding-bottom: 3%;
-    padding-left: 10%;
+    padding-top: 0%;
+    padding-bottom: 22%;
+    padding-left: 6%;
 }
 
 .selectDisable {
@@ -131,11 +131,13 @@ a.nav-link.px-4 {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    opacity: 0.4;
+
     background-color: #030303;
     text-align: center;
-    background: url('assets/images/Hero Image.png') no-repeat center center;
+    background: url('assets/images/Hero\ Image.jpg') no-repeat center center;
     background-size: cover; /* Ensure the image covers the entire section */
+   
+}
 
 
 }
@@ -147,13 +149,13 @@ a.nav-link.px-4 {
 }
 
 #hero-section h1 {
-    color: #000000;
+    color: #5cefd4ad;
     letter-spacing: 1px;
-    font-weight: 800;
-    font-size: 48px;
-    line-height: 106%;
-    padding-top: 5%;
-    z-index: 1;
+    font-weight: 1000;
+    font-size: 55px;
+    line-height: 90%;
+    padding-top: 3%;
+  
 }
 
 #hero-section span {

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorship Section</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #3498db; /* Blue background */
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            font-weight: 400;
+            color: #f1f1f1;
+        }
+
+        /* Animated Header Bar */
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #1abc9c, #f39c12, #e74c3c);
+            animation: moveBar 3s linear infinite;
+        }
+
+        @keyframes moveBar {
+            0% { background-position: 0%; }
+            100% { background-position: 200%; }
+        }
+
+        /* Mentorship Dropdown */
+        .mentorship {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .dropbtn {
+            background-color: #1abc9c;
+            color: white;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .dropbtn:hover {
+            background-color: #16a085;
+            transform: translateY(-3px);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 6px;
+            margin-top: 10px;
+            transition: opacity 0.3s ease, transform 0.2s ease;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(10px);
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #16a085;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 30px;
+            margin: 20px;
+            background-color: rgba(173, 216, 230, 0.8);
+            border-radius: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .section:hover {
+            transform: scale(1.02);
+            background-color: rgba(173, 216, 230, 1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .dropbtn {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+
+            .section {
+                padding: 20px;
+                margin: 15px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mentorship Platform</h1>
+        <p>Empowering Growth Through Guidance and Support</p>
+    </header>
+
+    <div class="mentorship">
+        <div class="dropdown">
+            <button class="dropbtn">Mentorship</button>
+            <div class="dropdown-content">
+                <a href="#government-schemes">Government Schemes</a>
+                <a href="#workshops">Workshops</a>
+                <a href="#counseling">Counseling</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example pages -->
+    <div id="government-schemes" class="section">
+        <h2>Government Schemes</h2>
+        <p>Explore various government schemes available for mentorship, skill development, and support for individuals seeking guidance and empowerment.</p>
+    </div>
+
+    <div id="workshops" class="section">
+        <h2>Workshops</h2>
+        <p>Discover workshops designed to promote personal growth, skill enhancement, and career advancement through expert-led sessions and hands-on activities.</p>
+    </div>
+
+    <div id="counseling" class="section">
+        <h2>Counseling</h2>
+        <p>Access counseling services that provide career advice, mental well-being support, and guidance for personal and professional challenges.</p>
+    </div>
+</body>
+</html>

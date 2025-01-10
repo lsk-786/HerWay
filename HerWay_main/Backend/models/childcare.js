@@ -1,25 +1,46 @@
-document.getElementById('locationForm').addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const location = document.getElementById('location').value;
-    const resultsList = document.getElementById('resultsList');
-    resultsList.innerHTML = '<li>Loading nearby childcare services...</li>';
+document.getElementById('findChildcareBtn').addEventListener('click', async () => {
+    const location = document.getElementById('locationInput').value.trim();
+
+    if (!location) {
+        document.getElementById('childcareResults').innerHTML = `
+            <div class="error-message">Please enter a location.</div>
+        `;
+        return;
+    }
 
     try {
+        // Fetch childcare services from backend
         const response = await fetch(`/api/childcare?location=${location}`);
         const data = await response.json();
 
-        resultsList.innerHTML = '';
-        if (data.services && data.services.length > 0) {
-            data.services.forEach(service => {
-                const li = document.createElement('li');
-                li.textContent = `${service.name} - ${service.address}`;
-                resultsList.appendChild(li);
-            });
+        if (response.ok) {
+            renderChildcareServices(data);
         } else {
-            resultsList.innerHTML = '<li>No childcare services found in your area.</li>';
+            document.getElementById('childcareResults').innerHTML = `
+                <div class="error-message">${data.message}</div>
+            `;
         }
     } catch (error) {
-        resultsList.innerHTML = '<li>Something went wrong. Please try again later.</li>';
-        console.error(error);
+        console.error("Error fetching childcare services:", error);
+        document.getElementById('childcareResults').innerHTML = `
+            <div class="error-message">Something went wrong. Please try again later.</div>
+        `;
     }
 });
+
+// Function to render childcare services in the results section
+function renderChildcareServices(services) {
+    const resultsContainer = document.getElementById('childcareResults');
+    resultsContainer.innerHTML = "";
+
+    services.forEach(service => {
+        const serviceCard = `
+            <div class="service-card">
+                <h3>${service.name}</h3>
+                <p><strong>Address:</strong> ${service.address}</p>
+                <p><strong>Contact:</strong> ${service.contact}</p>
+            </div>
+        `;
+        resultsContainer.innerHTML += serviceCard;
+    });
+}

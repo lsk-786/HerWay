@@ -463,6 +463,52 @@ app.delete("/products/:id/comments/:comment_id", function(req,res){
     })
 });
 
+//childcare
+const express = require('express');
+const app = express();
+const path = require('path');
+
+// Middleware to serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+
+// Hardcoded childcare data
+const childcareServices = [
+    { name: "Little Stars Daycare", location: "Springfield", contact: "123-456-7890", address: "123 Elm Street" },
+    { name: "Happy Kids Academy", location: "Springfield", contact: "987-654-3210", address: "456 Oak Avenue" },
+    { name: "Bright Minds Center", location: "Shelbyville", contact: "555-123-4567", address: "789 Maple Road" },
+    { name: "Sunshine Playhouse", location: "Shelbyville", contact: "444-555-6666", address: "101 Pine Lane" },
+];
+
+// Endpoint to get childcare services based on location
+app.get('/api/childcare', (req, res) => {
+    const userLocation = req.query.location?.toLowerCase();
+    if (!userLocation) {
+        return res.status(400).json({ message: "Location is required." });
+    }
+
+    // Filter childcare services based on location
+    const filteredServices = childcareServices.filter(service =>
+        service.location.toLowerCase() === userLocation
+    );
+
+    if (filteredServices.length > 0) {
+        res.json(filteredServices);
+    } else {
+        res.status(404).json({ message: "No childcare services found in your area." });
+    }
+});
+
+// Serve HTML files
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'childcare.html'));
+});
+
+// Start the server
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
 
 
 //========
