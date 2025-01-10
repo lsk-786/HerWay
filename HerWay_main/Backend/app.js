@@ -648,3 +648,16 @@ app.get('/api/childcare', (req, res) => {
     res.json({ services: filteredServices });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const textElement = document.querySelector('.animated-text');
+
+    // Initial Fade-In Effect
+    textElement.style.opacity = 0;
+    textElement.style.transform = 'scale(0.5)';
+    textElement.style.transition = 'opacity 2s, transform 2s';
+
+    setTimeout(() => {
+        textElement.style.opacity = 1;
+        textElement.style.transform = 'scale(1)';
+    }, 500);
+});

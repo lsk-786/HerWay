@@ -76,6 +76,7 @@ nav {
     font-size: 2rem;
     font-weight: bold;
     color: var(--text-variant);
+    
 }
 
 .navlink-border:hover {
@@ -94,13 +95,14 @@ nav {
 .nav-link:hover{
     color: white;
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #bdbdbd, 0 0 40px #bebebe, 0 0 50px #f6f6f6, 0 0 60px #c4c4c4, 0 0 70px #d7d7d7;
-    t
+    
 }
 
 .navbar-brand:hover,
 
 .navbar-toggler i:hover {
     color: var(--highlight);
+    
 }
 
 a.nav-link.px-4 {
@@ -140,7 +142,7 @@ a.nav-link.px-4 {
 }
 
 
-}
+
 
 
 .hero-intro {
@@ -173,6 +175,27 @@ a.nav-link.px-4 {
     display: none;
    
   }
+  .animated-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: blue;
+    position: relative;
+    animation: moveText 5s infinite alternate ease-in-out, changeColor 5s infinite alternate ease-in-out;
+}
+
+/* Keyframes for Moving Text */
+@keyframes moveText {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(50%); }
+    100% { transform: translateX(0); }
+}
+
+/* Keyframes for Changing Color */
+@keyframes changeColor {
+    0% { color: blue; }
+    50% { color: red; }
+    100% { color: blue; }
+}
 
 
 .cta {

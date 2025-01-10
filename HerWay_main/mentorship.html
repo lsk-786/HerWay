@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,74 +11,76 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f6f9;
+            background: linear-gradient(to bottom, #e0f7fa, #ffffff);
             color: #333;
+            overflow-x: hidden;
         }
 
         /* Header Styling */
         header {
-            background-color: #3498db; /* Blue background */
+            background: linear-gradient(135deg, #3498db, #1abc9c);
             color: white;
-            padding: 20px 40px;
+            padding: 60px 20px;
             text-align: center;
-            position: relative;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        header a {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: left;
+
         }
 
         header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 3rem;
+            font-weight: bold;
             margin: 0;
             line-height: 1.2;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+            text-transform: capitalize;
         }
 
         header p {
             font-size: 1.2rem;
-            margin-top: 10px;
-            font-weight: 400;
-            color: #f1f1f1;
+            margin-top: 15px;
+            color: #f8f9fa;
+            text-align: center;
         }
 
-        /* Animated Header Bar */
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: linear-gradient(90deg, #1abc9c, #f39c12, #e74c3c);
-            animation: moveBar 3s linear infinite;
-        }
-
-        @keyframes moveBar {
-            0% { background-position: 0%; }
-            100% { background-position: 200%; }
+        .navbar-brand {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #bdbdbd, 0 0 40px #bebebe, 0 0 50px #f6f6f6, 0 0 60px #c4c4c4, 0 0 70px #d7d7d7;
+            display: flex; 
+            text-decoration: none;
+            color:rgb(19, 64, 119)
+                      
         }
 
         /* Mentorship Dropdown */
         .mentorship {
             position: relative;
-            display: inline-block;
-            margin-top: 20px;
+            text-align: center;
+            margin-top: -40px;
         }
 
         .dropbtn {
-            background-color: #1abc9c;
+            background: linear-gradient(135deg, #1abc9c, #16a085);
             color: white;
-            padding: 16px 32px;
+            padding: 15px 40px;
             font-size: 18px;
-            font-weight: 600;
+            font-weight: bold;
             border: none;
+            border-radius: 30px;
             cursor: pointer;
-            border-radius: 6px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
 
         .dropbtn:hover {
-            background-color: #16a085;
+            background: linear-gradient(135deg, #16a085, #1abc9c);
             transform: translateY(-3px);
         }
 
@@ -85,12 +88,11 @@
             display: none;
             position: absolute;
             background-color: #ffffff;
-            min-width: 180px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 6px;
+            min-width: 200px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
             margin-top: 10px;
-            transition: opacity 0.3s ease, transform 0.2s ease;
         }
 
         .dropdown-content a {
@@ -99,54 +101,53 @@
             text-decoration: none;
             display: block;
             font-weight: 500;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, padding-left 0.2s ease;
         }
 
         .dropdown-content a:hover {
-            background-color: #f1f1f1;
+            background-color: #e8f6f3;
+            padding-left: 20px;
         }
 
         .dropdown:hover .dropdown-content {
             display: block;
-            opacity: 1;
-            transform: translateY(10px);
-        }
-
-        .dropdown:hover .dropbtn {
-            background-color: #16a085;
         }
 
         /* Section Styling */
         .section {
             padding: 30px;
-            margin: 20px;
-            background-color: rgba(173, 216, 230, 0.8);
-            border-radius: 8px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            margin: 20px auto;
+            max-width: 800px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .section:hover {
-            transform: scale(1.02);
-            background-color: rgba(173, 216, 230, 1);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
         h2 {
             font-size: 1.8rem;
             color: #2c3e50;
-            font-weight: 600;
+            font-weight: bold;
             margin-bottom: 15px;
+            text-align: center;
         }
 
         p {
             font-size: 1.1rem;
             color: #555;
-            line-height: 1.6;
+            line-height: 1.8;
+            text-align: justify;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             header p {
@@ -154,7 +155,7 @@
             }
 
             .dropbtn {
-                padding: 12px 20px;
+                padding: 12px 30px;
                 font-size: 16px;
             }
 
@@ -164,46 +165,56 @@
             }
 
             h2 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
 
             p {
                 font-size: 1rem;
             }
+
+
         }
     </style>
 </head>
+
 <body>
+
     <header>
+        <section>
+            <a class="navbar-brand" href="index.html"> HerWay </a>
+        </section>
         <h1>Mentorship Platform</h1>
         <p>Empowering Growth Through Guidance and Support</p>
     </header>
 
     <div class="mentorship">
         <div class="dropdown">
-            <button class="dropbtn">Mentorship</button>
-            <div class="dropdown-content">
-                <a href="#government-schemes">Government Schemes</a>
-                <a href="#workshops">Workshops</a>
-                <a href="#counseling">Counseling</a>
-            </div>
+            <button class="dropbtn">Explore Mentorship</button>
+
         </div>
     </div>
 
-    <!-- Example pages -->
     <div id="government-schemes" class="section">
         <h2>Government Schemes</h2>
-        <p>Explore various government schemes available for mentorship, skill development, and support for individuals seeking guidance and empowerment.</p>
+        <p>Explore and learn about various government schemes for women focusing on their empowerment. The Indian
+            government has launched schemes like Beti Bachao Beti Padhao, Sukanya Samriddhi Yojana, and Stand Up India
+            to promote women's education, health, safety, and economic empowerment.</p>
     </div>
 
     <div id="workshops" class="section">
         <h2>Workshops</h2>
-        <p>Discover workshops designed to promote personal growth, skill enhancement, and career advancement through expert-led sessions and hands-on activities.</p>
+        <p>Discover workshops promoting personal growth, skill enhancement, and career advancement through expert-led
+            sessions. Network with like-minded individuals and gain valuable insights to transform your life and career.
+        </p>
     </div>
 
     <div id="counseling" class="section">
         <h2>Counseling</h2>
-        <p>Access counseling services that provide career advice, mental well-being support, and guidance for personal and professional challenges.</p>
+        <p>Access our counseling services to navigate life's challenges with confidence and clarity. Our expert
+            counselors provide guidance on career exploration, mental well-being support, personal development, and
+            addressing professional challenges, helping you gain clarity, direction, and support for personal and
+            professional growth.</p>
     </div>
 </body>
+
 </html>
